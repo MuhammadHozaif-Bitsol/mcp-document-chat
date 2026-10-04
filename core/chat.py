@@ -31,7 +31,12 @@ class Chat:
             self.claude_service.add_assistant_message(self.messages, response)
 
             if response.stop_reason == "tool_use":
-                print(self.claude_service.text_from_message(response))
+                text = self.claude_service.text_from_message(response)
+                if text:
+                    print(text)
+                for block in response.content:
+                    if block.type == "tool_use":
+                        print(f"[tool] {block.name}({block.input})")
                 tool_result_parts = await ToolManager.execute_tool_requests(
                     self.clients, response
                 )
