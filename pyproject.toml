@@ -1,7 +1,7 @@
 [project]
 name = "app"
 version = "0.1.0"
-description = "Add your description here"
+description = "CLI chat app where Claude reads and edits documents through an MCP server and client"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
