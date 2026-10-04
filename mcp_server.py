@@ -82,8 +82,5 @@ Use the 'edit_document' tool to edit the document. After the document has been r
     return [base.UserMessage(prompt)]
 
 
-# TODO: Write a prompt to summarize a doc
-
-
 if __name__ == "__main__":
     mcp.run(transport="stdio")
